@@ -17,7 +17,7 @@ For hosting PHP powered websites.
 - curl
 - fpm
 - gd
-- imagick
+- imagick (only on X64)
 - imap
 - json
 - mbstring
@@ -26,7 +26,7 @@ For hosting PHP powered websites.
 - opcache
 - readline
 - sqlite3
-- xdebug
+- xdebug (only on X64)
 - xml
 - zip
 
@@ -62,6 +62,9 @@ From this image:
 
 - CF\_WWWFPM\_USER\_ID [int]: User-ID for wwwphpfpm (default: 1000)
 - CF\_WWWFPM\_GROUP\_ID [int]: Group-ID for wwwphpfpm (default: 1000)
+
+Only on X64:
+
 - CF\_ENABLE\_XDEBUG [bool]: Enable XDebug PHP module? (default: false)
 - CF\_XDEBUG\_REMOTE\_HOST [string]: Remote Host for XDebug (default 'dockerhost')
 
@@ -100,7 +103,7 @@ services:
     tty: false
 ```
 
-## Enabling the PHP Module XDebug
+## Enabling the PHP Module XDebug (only on X64)
 The PHP Module 'xdebug' is disabled by default.  
 To enable it you'll need to follow these steps from within a Bash shell:  
 (replace "DOCKERCONTAINER" with your Docker Container's name)
@@ -125,7 +128,7 @@ To enable it you'll need to follow these steps from within a Bash shell:
 	$ docker exec -it DOCKERCONTAINER service php7.4-fpm restart
 	```
 
-## Disabling the PHP Module XDebug
+## Disabling the PHP Module XDebug (only on X64)
 ```  
 $ docker exec -it DOCKERCONTAINER phpdismod xdebug
 ```  
