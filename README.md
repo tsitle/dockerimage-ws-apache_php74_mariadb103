@@ -25,6 +25,7 @@ For hosting PHP powered websites.
 - mysql
 - opcache
 - readline
+- redis
 - sqlite3
 - xdebug (only on X64)
 - xml

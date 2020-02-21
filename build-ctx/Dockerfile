@@ -43,6 +43,7 @@ RUN \
 				php${CF_PHP_FPM_VERSION}-mbstring \
 				php${CF_PHP_FPM_VERSION}-mysql \
 				php${CF_PHP_FPM_VERSION}-readline \
+				php${CF_PHP_FPM_VERSION}-redis \
 				php${CF_PHP_FPM_VERSION}-sqlite3 \
 				php${CF_PHP_FPM_VERSION}-zip \
 				php${CF_PHP_FPM_VERSION}-xml \
