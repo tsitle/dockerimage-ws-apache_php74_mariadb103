@@ -63,9 +63,12 @@ LVAR_DEBIAN_DIST="$(_getCpuArch debian_dist)"
 
 LVAR_REPO_PREFIX="tsle"
 LVAR_PARENT_IMAGE_NAME="ws-apache-base-$LVAR_DEBIAN_DIST"
-LVAR_PARENT_IMAGE_VER="2.3"
+LVAR_PARENT_IMAGE_VER="2.4"
 
 LVAR_PARENT_IMG_FULL="${LVAR_PARENT_IMAGE_NAME}:${LVAR_PARENT_IMAGE_VER}"
+
+LVAR_IMAGE_NAME="ws-apache-php74-mariadb103-$LVAR_DEBIAN_DIST"
+LVAR_IMAGE_VER="${LVAR_PARENT_IMAGE_VER}a"
 
 # ----------------------------------------------------------
 
@@ -105,9 +108,6 @@ fi
 cd build-ctx || exit 1
 
 # ----------------------------------------------------------
-
-LVAR_IMAGE_NAME="ws-apache-php74-mariadb103-$LVAR_DEBIAN_DIST"
-LVAR_IMAGE_VER="${LVAR_PARENT_IMAGE_VER}c"
 
 LVAR_MARIADB_VERSION="10.3"
 
