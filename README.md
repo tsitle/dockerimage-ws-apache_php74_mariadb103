@@ -63,6 +63,19 @@ From this image:
 
 - CF\_WWWFPM\_USER\_ID [int]: User-ID for wwwphpfpm (default: 1000)
 - CF\_WWWFPM\_GROUP\_ID [int]: Group-ID for wwwphpfpm (default: 1000)
+- CF\_PHPFPM\_RUN\_AS\_WWWDATA [bool]: Run PHP-FPM process as user/group www-data ? (default: false)
+- CF\_PHPFPM\_ENABLE\_OPEN\_BASEDIR [bool]: (default: false)
+- CF\_PHPFPM\_UPLOAD\_TMP\_DIR [string]: (default: "/var/www/upload\_tmp\_dir")
+- CF\_PHPFPM\_PM\_MAX\_CHILDREN [int]: (default: 5)
+- CF\_PHPFPM\_PM\_START\_SERVERS [int]: (default: 2)
+- CF\_PHPFPM\_PM\_MIN\_SPARE\_SERVERS [int]: (default: 1)
+- CF\_PHPFPM\_PM\_MAX\_SPARE\_SERVERS [int]: (default: 3)
+- CF\_PHPFPM\_UPLOAD\_MAX\_FILESIZE [sizestring]: (default: "100M")
+- CF\_PHPFPM\_POST\_MAX\_SIZE [sizestring]: (default: "100M")
+- CF\_PHPFPM\_MEMORY\_LIMIT [sizestring]: (default: "512M")
+- CF\_PHPFPM\_MAX\_EXECUTION\_TIME [int]: (default: 600)
+- CF\_PHPFPM\_MAX\_INPUT\_TIME [int]: (default: 600)
+- CF\_PHPFPM\_HTML\_ERRORS [bool]: (default: false)
 
 Only on X64:
 
