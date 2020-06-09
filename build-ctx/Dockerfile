@@ -27,6 +27,10 @@ RUN \
 	# install packages
 		apt-get update \
 		&& apt-get install -y --no-install-recommends \
+			# misc
+				git \
+				unzip \
+				p7zip \
 			# mariadb packages
 				mariadb-client-${CF_MARIADB_VERSION} \
 			# php packages
