@@ -116,7 +116,12 @@ RUN \
 RUN \
 	( a2dismod php${CF_PHP_FPM_VERSION} 2>/dev/null || echo -n "" ) \
 	&& a2enconf php${CF_PHP_FPM_VERSION}-fpm \
-	&& phpdismod xdebug
+	|| exit 1; \
+	if [ "$CF_CPUARCH_DEB_DIST" = "amd64" ]; then \
+		phpdismod xdebug; \
+	else \
+		echo -n; \
+	fi
 
 # copy config files
 COPY files/php/ /etc/php/${CF_PHP_FPM_VERSION}/
