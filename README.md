@@ -3,6 +3,7 @@
 For hosting PHP powered websites.
 
 ## Inheritance and added packages
+
 - Docker Image **tsle/ws-apache-base** (see [https://github.com/tsitle/dockerimage-ws-apache\_base](https://github.com/tsitle/dockerimage-ws-apache_base))
 	- PHP 7.4 (CLI + FPM)
 	- PHP packages (see below)
@@ -11,6 +12,7 @@ For hosting PHP powered websites.
 	- xml-core
 
 ## PHP Packages included
+
 - bcmath
 - cli
 - common
@@ -34,12 +36,15 @@ For hosting PHP powered websites.
 - zip
 
 ## Webserver TCP Port
+
 The webserver is listening only on TCP port 80 by default.
 
 ## Docker Container usage
+
 See the related GitHub repository [https://github.com/tsitle/dockercontainer-ws-apache\_php74\_mariadb103](https://github.com/tsitle/dockercontainer-ws-apache_php74_mariadb103)
 
 ## Docker Container configuration
+
 From **tsle/ws-apache-base**:
 
 - CF\_PROJ\_PRIMARY\_FQDN [string]: FQDN for website (e.g. "mywebsite.localhost") (default: empty)
@@ -60,6 +65,7 @@ From **tsle/ws-apache-base**:
 - CF\_CSR\_SUBJECT\_LOCATION [string]: For auto-generated SSL Certificates (default: LE)
 - CF\_CSR\_SUBJECT\_ORGANIZ [string]: For auto-generated SSL Certificates (default: The IT Company)
 - CF\_CSR\_SUBJECT\_ORGUNIT [string]: For auto-generated SSL Certificates (default: IT)
+- CF\_APACHE\_TIMEOUT [int]: Number of seconds before receives and sends time out (default: 300)
 
 From this image:
 
@@ -85,6 +91,7 @@ Only on X64:
 - CF\_XDEBUG\_REMOTE\_HOST [string]: Remote Host for XDebug (default 'dockerhost')
 
 ## Using cron
+
 You'll need to create the crontab file `./mpcron/wwwphpfpm` and then add some task to the file:
 
 ```
@@ -119,35 +126,14 @@ services:
     tty: false
 ```
 
-## Enabling the PHP Module XDebug (only on X64)
-The PHP Module 'xdebug' is disabled by default.  
-To enable it you'll need to follow these steps from within a Bash shell:  
-(replace "DOCKERCONTAINER" with your Docker Container's name)
+## Enabling/Disabling the PHP Module XDebug in a running container (only on X64)
 
-1. Start the Docker Container
-2. If your debugger (e.g. IntelliJ) is running on a different machine then
-	you'll need to replace the default hostname "host" with your machine's hostname.  
-	Edit XDebug configuration:  
-	```
-	$ docker exec -it DOCKERCONTAINER nano /etc/php/7.4/mods-available/xdebug.ini
-	```  
-
-	```
-	xdebug.remote_host="host"
-	```  
-	When done editing hit CTRL-X, then "J" and hit ENTER
-3. Now enable the PHP Module:  
-	```  
-	$ docker exec -it DOCKERCONTAINER phpenmod xdebug
-	```  
-	```  
-	$ docker exec -it DOCKERCONTAINER service php7.4-fpm restart
-	```
-
-## Disabling the PHP Module XDebug (only on X64)
-```  
+```
+# enable:
+$ docker exec -it DOCKERCONTAINER phpenmod xdebug
+# disable:
 $ docker exec -it DOCKERCONTAINER phpdismod xdebug
-```  
-```  
+```
+```
 $ docker exec -it DOCKERCONTAINER service php7.4-fpm restart
 ```
