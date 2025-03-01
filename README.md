@@ -4,7 +4,7 @@ For hosting PHP powered websites.
 
 ## Inheritance and added packages
 
-- Docker Image **tsle/ws-apache-base** (see [https://github.com/tsitle/dockerimage-ws-apache\_base](https://github.com/tsitle/dockerimage-ws-apache_base))
+- Docker Image **tsle/ws-apache-base** (see [https://github.com/tsitle/dockerimage-ws-apache_base](https://github.com/tsitle/dockerimage-ws-apache_base))
 	- PHP 7.4 (CLI + FPM)
 	- PHP packages (see below)
 	- MariaDB Client 10.3 (^= MySQL 5.7/8.0)
@@ -41,7 +41,7 @@ The webserver is listening only on TCP port 80 by default.
 
 ## Docker Container usage
 
-See the related GitHub repository [https://github.com/tsitle/dockercontainer-ws-apache\_php74\_mariadb103](https://github.com/tsitle/dockercontainer-ws-apache_php74_mariadb103)
+See the related GitHub repository [https://github.com/tsitle/dockercontainer-ws-apache_php74_mariadb103](https://github.com/tsitle/dockercontainer-ws-apache_php74_mariadb103)
 
 ## Docker Container configuration
 
